@@ -8,7 +8,8 @@
   "scripts": {
     "lint": "eslint .",
     "format": "prettier --write .",
-    "day-1": "tsx watch src/day-1"
+    "day-1-1": "tsx watch src/day-1/part-1",
+    "day-1-2": "tsx watch src/day-1/part-2"
   },
   "devDependencies": {
     "@types/node": "^20.10.3",

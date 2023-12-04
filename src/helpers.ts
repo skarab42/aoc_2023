@@ -17,7 +17,7 @@ export function filename(importMeta: ImportMeta): string {
 }
 
 export function readInputText(importMeta: ImportMeta): string {
-  return readFileSync(resolve(dirname(importMeta), 'input.txt'), 'utf8');
+  return readFileSync(resolve(dirname(importMeta), 'input.txt'), 'utf8').trim();
 }
 
 export function readInputLines(importMeta: ImportMeta): string[] {

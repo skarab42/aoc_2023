@@ -16,10 +16,14 @@ export function filename(importMeta: ImportMeta): string {
   return fileURLToPath(importMeta.url);
 }
 
-export function readInputText(importMeta: ImportMeta): string {
-  return readFileSync(resolve(dirname(importMeta), 'input.txt'), 'utf8').trim();
+export function readInputText(importMeta: ImportMeta, filename = 'input'): string {
+  return readFileSync(resolve(dirname(importMeta), `${filename}.txt`), 'utf8').trim();
 }
 
-export function readInputLines(importMeta: ImportMeta): string[] {
-  return readInputText(importMeta).split(/\r?\n/);
+export function splitLines(input: string): string[] {
+  return input.split(/\r?\n/);
+}
+
+export function readInputLines(importMeta: ImportMeta, filename = 'input'): string[] {
+  return splitLines(readInputText(importMeta, filename));
 }

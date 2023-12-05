@@ -9,13 +9,7 @@ function calculatePoints(matchNumbers: number): number {
     return matchNumbers;
   }
 
-  let result = 1;
-
-  for (let index = 0; index < matchNumbers - 1; index++) {
-    result = result * 2;
-  }
-
-  return result;
+  return Math.pow(2, matchNumbers - 1);
 }
 
 let answer = 0;

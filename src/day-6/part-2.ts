@@ -1,11 +1,10 @@
 import { printTitle, readInputLines } from '../helpers';
+import { parseOneRace } from './parse-input';
+import { getBetterTimeCount } from './parse-input';
 
 printTitle(6, 2);
 
-const input = readInputLines(import.meta);
+const lines = readInputLines(import.meta);
+const answer = getBetterTimeCount(parseOneRace(lines));
 
-let answer = input;
-
-// DO THE FUCKING JOB !
-
-console.log('Answer:', answer); // ???
+console.log('Answer:', answer); // 35961505

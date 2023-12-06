@@ -11,7 +11,7 @@ const dayDirectory = path.resolve(__dirname, `day-${dayNumber}`);
 
 if (fs.existsSync(dayDirectory)) {
   console.log(`> ERROR: The directory for day ${dayNumber} already exists at ${dayDirectory}`);
-  // process.exit();
+  process.exit();
 }
 
 console.log('> INFO: Making day', dayNumber);
@@ -31,6 +31,7 @@ let answer = input;
 console.log('Answer:', answer); // ???
 `.trimStart();
 
+fs.outputFileSync(path.resolve(dayDirectory, 'debug.txt'), '');
 fs.outputFileSync(path.resolve(dayDirectory, 'input.txt'), '');
 fs.outputFileSync(path.resolve(dayDirectory, 'part-1.ts'), template(1));
 fs.outputFileSync(path.resolve(dayDirectory, 'part-2.ts'), template(2));

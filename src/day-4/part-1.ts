@@ -1,26 +1,16 @@
 import { printTitle, readInputLines } from '../helpers';
+import { parseGame } from './parse-games';
 
 printTitle(4, 1);
 
 const lines = readInputLines(import.meta);
 
-function calculatePoints(matchNumbers: number): number {
-  if (matchNumbers < 3) {
-    return matchNumbers;
-  }
-
-  return Math.pow(2, matchNumbers - 1);
-}
-
 let answer = 0;
 
 for (const line of lines) {
-  const [, winningNumbersString = '', myNumbersString = ''] = line.split(/[:|]/);
-  const myNumbers = myNumbersString.trim().split(/ +/).map(Number);
-  const winningNumbers = new Set(winningNumbersString.trim().split(' ').map(Number));
-  const matchNumbers = myNumbers.filter((myNumber) => winningNumbers.has(myNumber));
+  const game = parseGame(line);
 
-  answer += calculatePoints(matchNumbers.length);
+  answer += game.points;
 }
 
 console.log('Answer:', answer); // 24848

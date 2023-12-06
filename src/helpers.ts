@@ -27,3 +27,7 @@ export function splitLines(input: string): string[] {
 export function readInputLines(importMeta: ImportMeta, filename = 'input'): string[] {
   return splitLines(readInputText(importMeta, filename));
 }
+
+export function arraySum(array: number[]): number {
+  return array.reduce((a, b) => a + b, 0);
+}

@@ -42,7 +42,6 @@ function normalizeInput(input: string): string {
 
 function parseHand(input: string): Hand {
   const normalizedInput = normalizeInput(input);
-  const handCount = { five: 0, four: 0, three: 0, two: 0, one: 0 };
 
   let sortedHand = [...input].sort().join('');
   let strength = 0;
@@ -51,13 +50,10 @@ function parseHand(input: string): Hand {
     const match = sortedHand.match(KIND_REGEXP[kind]);
 
     if (match) {
-      handCount[kind] += match.length;
       strength += match.length * KIND_POINTS[kind];
       sortedHand = sortedHand.replace(KIND_REGEXP[kind], '');
     }
   }
-
-  handCount.one += sortedHand.length;
 
   return { input, normalizedInput, strength };
 }

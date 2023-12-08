@@ -22,7 +22,9 @@
     "day-6-1": "tsx watch src/day-6/part-1",
     "day-6-2": "tsx watch src/day-6/part-2",
     "day-7-1": "tsx watch src/day-7/part-1",
-    "day-7-2": "tsx watch src/day-7/part-2"
+    "day-7-2": "tsx watch src/day-7/part-2",
+    "day-8-1": "tsx watch src/day-8/part-1",
+    "day-8-2": "tsx watch src/day-8/part-2"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
